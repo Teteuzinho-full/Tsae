@@ -7,11 +7,11 @@ Next.js (App Router) · TypeScript · Tailwind · Drizzle · Neon PostgreSQL · 
 - Educa (/educa): public/assets/logo-educa.png + logo-educa.ico (definidos em src/app/educa/layout.tsx)
 
 ## Executar localmente
-1. cp .env.example .env.local e preencher DATABASE_URL (Neon), BETTER_AUTH_SECRET (openssl rand -base64 32), ADMIN1_* e ADMIN2_*
+1. cp .env.example .env.local e preencher DATABASE_URL (Neon), BETTER_AUTH_SECRET (openssl rand -base64 32), ADMIN1_* (ADMIN2_* opcional)
 2. npm install
 3. npm run db:migrate        # aplica drizzle/*.sql
 4. npm run db:seed           # 10 cursos (PENDING_REVIEW), categorias, módulos, aulas e 100 palavras-chave
-5. npm run admins:create     # cria os 2 admins; depois ative o MFA em /admin/seguranca
+5. npm run admins:create     # cria um ou dois admins; depois ative o MFA em /admin/seguranca
 6. npm run dev
 Testes: npm test (Vitest + PostgreSQL em memória) · npm run lint (tsc) · npm run check:data
 
