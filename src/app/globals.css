@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@theme {
+  --color-brand-red: #B83D45;
+  --color-brand-gold: #F2B92F;
+  --color-graphite: #171717;
+  --color-mist: #F4F4F5;
+  --font-sans: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
