@@ -37,7 +37,7 @@ async function main() {
       await db.insert(courseLessons).values(m.lessons.map((l, li) => ({ moduleId: mod.id, title: l.title, content: l.summary, position: li + 1 })));
     }
     const [qz] = await db.insert(quizzes).values({ courseId: row.id, title: `Avaliação — ${c.title}` }).onConflictDoNothing().returning({ id: quizzes.id });
-    if (qz) await db.insert(quizQuestions).values(c.quiz.map((q, i) => ({ quizId: qz.id, prompt: q.q, options: q.options, correctIndex: q.answer, position: i + 1 })));
+    if (qz && c.quiz.length > 0) await db.insert(quizQuestions).values(c.quiz.map((q, i) => ({ quizId: qz.id, prompt: q.q, options: q.options, correctIndex: q.answer, position: i + 1 })));
   }
   await db.insert(seoKeywords).values(allKeywords).onConflictDoNothing();
   console.log("Seed concluído");
